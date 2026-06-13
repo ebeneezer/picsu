@@ -4,7 +4,8 @@
         "Authors": [
             {
                 "Email": "dr.michael.raus@gmail.com",
-                "Name": "Dr. Michael Raus"
+                "Name": "Dr. Michael Raus",
+                "Website": "https://github.com/ebeneezer/picsu"
             }
         ],
         "Category": "Utilities",
@@ -14,7 +15,7 @@
         "Id": "org.mraus.picsu",
         "License": "GPL-3.0-or-later",
         "Name": "Picsu Snapshot",
-        "Version": "0.1.0",
+        "Version": "0.1.1",
         "Website": "https://github.com/ebeneezer/picsu"
     },
     "X-Plasma-API-Minimum-Version": "6.0"
