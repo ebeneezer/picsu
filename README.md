@@ -16,7 +16,6 @@ other windows until clicked.
 - Configurable broker host, port, topic, username, and password
 - Configurable panel scaling and fit/crop behavior
 - Live enlarged popup view
-- Optional legacy Perl subscriber and systemd unit for writing MQTT payloads to a file
 
 ## Requirements
 
@@ -74,26 +73,6 @@ image when path, modification time, and file size did not change.
 
 For MQTT mode, configure broker host, port, topic, and optional credentials. The topic
 payload must be a complete binary image such as JPEG or PNG.
-
-## Optional Filesystem Bridge
-
-The `picsu_snapshot_sub.pl` script can subscribe to MQTT with `mosquitto_sub` and write
-the latest payload to a local image file. This is useful when the plasmoid is configured
-for filesystem mode or when the MQTT path should be isolated from Plasma Shell.
-
-Configure it through an environment file such as `~/.config/picsu-snapshot.env`:
-
-```sh
-PICSU_MQTT_HOST=broker.example.org
-PICSU_MQTT_PORT=1883
-PICSU_MQTT_TOPIC=picsu/snapshot
-PICSU_MQTT_USERNAME=
-PICSU_MQTT_PASSWORD=
-PICSU_SNAPSHOT_DIR=/dev/shm/picsu
-PICSU_SNAPSHOT_PATH=/dev/shm/picsu/snapshot.jpg
-```
-
-Then install or adapt `picsu-snapshot.service` as a user systemd unit.
 
 ## Hilfe Anfordern
 
