@@ -74,7 +74,7 @@ image when path, modification time, and file size did not change.
 For MQTT mode, configure broker host, port, topic, and optional credentials. The topic
 payload must be a complete binary image such as JPEG or PNG.
 
-## Hilfe Anfordern
+## Support
 
 For help, source inspection, and issue reports, use the GitHub repository:
 
