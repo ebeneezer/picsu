@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kcfg xmlns="http://www.kde.org/standards/kcfg/1.0"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0
+      http://www.kde.org/standards/kcfg/1.0/kcfg.xsd">
+  <kcfgfile name=""/>
+
+  <group name="Source">
+    <entry name="sourceMode" type="String">
+      <default>filesystem</default>
+    </entry>
+    <entry name="filePath" type="String">
+      <default>/dev/shm/picsu/snapshot.jpg</default>
+    </entry>
+    <entry name="mqttHost" type="String">
+      <default></default>
+    </entry>
+    <entry name="mqttPort" type="Int">
+      <default>1883</default>
+    </entry>
+    <entry name="mqttTopic" type="String">
+      <default></default>
+    </entry>
+    <entry name="mqttUsername" type="String">
+      <default></default>
+    </entry>
+    <entry name="mqttPassword" type="String">
+      <default></default>
+    </entry>
+    <entry name="popupBehavior" type="String">
+      <default>defocus</default>
+    </entry>
+    <entry name="compactScalePercent" type="Int">
+      <default>300</default>
+    </entry>
+    <entry name="compactFillMode" type="String">
+      <default>fit</default>
+    </entry>
+  </group>
+</kcfg>

@@ -1,0 +1,21 @@
+{
+    "KPackageStructure": "Plasma/Applet",
+    "KPlugin": {
+        "Authors": [
+            {
+                "Email": "dr.michael.raus@gmail.com",
+                "Name": "Dr. Michael Raus"
+            }
+        ],
+        "Category": "Utilities",
+        "BugReportUrl": "https://github.com/ebeneezer/picsu#hilfe-anfordern",
+        "Description": "Shows a live camera snapshot from a file or MQTT topic",
+        "Icon": "kayda",
+        "Id": "org.mraus.picsu",
+        "License": "GPL-3.0-or-later",
+        "Name": "Picsu Snapshot",
+        "Version": "0.1.0",
+        "Website": "https://github.com/ebeneezer/picsu"
+    },
+    "X-Plasma-API-Minimum-Version": "6.0"
+}

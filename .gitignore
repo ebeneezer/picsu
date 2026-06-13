@@ -1,0 +1,12 @@
+build/
+.codex
+
+*.o
+*.so
+*.so.*
+
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+

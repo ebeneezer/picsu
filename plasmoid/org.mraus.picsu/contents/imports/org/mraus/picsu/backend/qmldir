@@ -1,0 +1,3 @@
+module org.mraus.picsu.backend
+plugin picsubackendplugin
+classname PicsuBackendPlugin
