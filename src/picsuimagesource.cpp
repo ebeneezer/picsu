@@ -9,6 +9,7 @@
 #include <QDir>
 #include <QFile>
 #include <QFileInfo>
+#include <QImage>
 #include <QImageReader>
 #include <QMimeDatabase>
 #include <QUrl>
@@ -433,7 +434,11 @@ double PicsuImageSource::imageAspectRatioForData(const QByteArray &data)
     buffer.open(QIODevice::ReadOnly);
 
     QImageReader reader(&buffer);
-    const QSize size = reader.size();
+    const QSize encodedSize = reader.size();
+    reader.setAutoTransform(true);
+
+    const QImage image = reader.read();
+    const QSize size = image.isNull() ? encodedSize : image.size();
     if (!size.isValid() || size.height() <= 0) {
         return 16.0 / 9.0;
     }

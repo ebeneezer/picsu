@@ -103,18 +103,23 @@ PlasmoidItem {
         id: fullRoot
 
         readonly property real imageAspectRatio: Math.max(0.1, imageSource.imageAspectRatio)
+        readonly property real effectiveImageAspectRatio: fullImage.intrinsicAspectRatio > 0
+            ? fullImage.intrinsicAspectRatio
+            : imageAspectRatio
         readonly property real preferredImageWidth: Kirigami.Units.gridUnit * 36
         readonly property real minimumImageWidth: Kirigami.Units.gridUnit * 16
         readonly property real effectiveImageWidth: width > 0 ? width : preferredImageWidth
-        readonly property real effectiveImageHeight: effectiveImageWidth / imageAspectRatio
+        readonly property real effectiveImageHeight: effectiveImageWidth / effectiveImageAspectRatio
 
         Layout.minimumWidth: minimumImageWidth
-        Layout.minimumHeight: minimumImageWidth / imageAspectRatio
+        Layout.minimumHeight: minimumImageWidth / effectiveImageAspectRatio
         Layout.preferredWidth: preferredImageWidth
         Layout.preferredHeight: effectiveImageHeight
         Layout.maximumHeight: effectiveImageHeight
 
         SnapshotImage {
+            id: fullImage
+
             anchors.fill: parent
             imageUrl: imageSource.imageUrl
             fallbackSource: Qt.resolvedUrl("../images/kayda.jpeg")
@@ -165,13 +170,18 @@ PlasmoidItem {
             id: externalDialogItem
 
             readonly property real imageAspectRatio: Math.max(0.1, imageSource.imageAspectRatio)
+            readonly property real effectiveImageAspectRatio: externalDialogImage.intrinsicAspectRatio > 0
+                ? externalDialogImage.intrinsicAspectRatio
+                : imageAspectRatio
             readonly property real preferredImageWidth: Kirigami.Units.gridUnit * 36
             readonly property real edgePadding: Kirigami.Units.gridUnit
 
             width: preferredImageWidth + edgePadding * 2
-            height: preferredImageWidth / imageAspectRatio + edgePadding * 2
+            height: preferredImageWidth / effectiveImageAspectRatio + edgePadding * 2
 
             SnapshotImage {
+                id: externalDialogImage
+
                 anchors.fill: parent
                 anchors.margins: externalDialogItem.edgePadding
                 imageUrl: imageSource.imageUrl

@@ -19,6 +19,11 @@ Item {
         : imageB.status === Image.Ready
     readonly property real activePaintedWidth: showingA ? imageA.paintedWidth : imageB.paintedWidth
     readonly property real activePaintedHeight: showingA ? imageA.paintedHeight : imageB.paintedHeight
+    readonly property real activeSourceWidth: showingA ? imageA.sourceSize.width : imageB.sourceSize.width
+    readonly property real activeSourceHeight: showingA ? imageA.sourceSize.height : imageB.sourceSize.height
+    readonly property real intrinsicAspectRatio: activeSourceWidth > 0 && activeSourceHeight > 0
+        ? activeSourceWidth / activeSourceHeight
+        : 0
 
     function requestImage(url) {
         if (url.length === 0) {
@@ -44,6 +49,7 @@ Item {
         anchors.fill: parent
         cache: false
         asynchronous: true
+        autoTransform: true
         fillMode: root.fillMode
         smooth: true
         mipmap: true
@@ -63,6 +69,7 @@ Item {
         anchors.fill: parent
         cache: false
         asynchronous: true
+        autoTransform: true
         fillMode: root.fillMode
         smooth: true
         mipmap: true
@@ -94,6 +101,7 @@ Item {
         width: Math.min(parent.width, parent.height) * 0.62
         height: width
         source: root.fallbackSource
+        autoTransform: true
         fillMode: Image.PreserveAspectCrop
         smooth: true
         mipmap: true
