@@ -8,7 +8,7 @@
             }
         ],
         "Category": "Utilities",
-        "BugReportUrl": "https://github.com/ebeneezer/picsu#hilfe-anfordern",
+        "BugReportUrl": "https://github.com/ebeneezer/picsu/issues",
         "Description": "Shows a live camera snapshot from a file or MQTT topic",
         "Icon": "kayda",
         "Id": "org.mraus.picsu",
